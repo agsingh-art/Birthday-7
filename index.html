@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Pari ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    color:white;
+    animation:floatUp 6s linear infinite;
+    opacity:0.7;
+    pointer-events:none;
+    z-index:1;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+/* Main Container */
+
+.container{
+
+    position:relative;
+    z-index:2;
+
+    width:90%;
+    max-width:1100px;
+
+    margin:auto;
+    padding:40px 0;
+}
+
+/* Hero Section */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,105,180,0.8),
+    0 0 40px rgba(255,20,147,0.6);
+
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.03);
+    }
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    max-width:700px;
+
+    line-height:1.8;
+}
+
+/* Glass Cards */
+
+.card{
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    margin:40px 0;
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.15);
+
+    transition:0.4s ease;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+}
+
+.card h2{
+
+    margin-bottom:20px;
+    font-size:2.5rem;
+}
+
+.card p{
+
+    font-size:1.15rem;
+
+    line-height:2;
+}
+
+/* Typing Text */
+
+#typing-text{
+
+    margin-top:30px;
+
+    font-size:1.2rem;
+
+    line-height:2;
+
+    white-space:pre-line;
+}
+
+/* Memories */
+
+.memories{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.memory-box{
+
+    background:rgba(255,255,255,0.15);
+
+    padding:30px;
+
+    border-radius:25px;
+
+    transition:0.4s;
+}
+
+.memory-box:hover{
+
+    transform:scale(1.05);
+}
+
+/* Buttons */
+
+button{
+
+    margin-top:25px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff4f87,#ff85a2);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 5px 20px rgba(255,79,135,0.4);
+}
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 8px 30px rgba(255,79,135,0.6);
+}
+
+/* Love Message */
+
+#loveMessage{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+}
+
+/* Footer */
+
+.footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    font-size:1.2rem;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .card h2{
+        font-size:2rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MAIN WEBSITE -->
+
+<div class="container">
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <h1>Happy Birthday Pari ❤️</h1>
+
+        <p>
+            A beautiful little world made only for you ✨
+        </p>
+
+        <button onclick="scrollToLetter()">
+            Read My Heart ❤️
+        </button>
+
+    </section>
+
+    <!-- LETTER SECTION -->
+
+    <section class="card">
+
+        <h2>💌 A Letter For You</h2>
+
+        <p id="typing-text"></p>
+
+    </section>
+
+    <!-- MEMORIES -->
+
+    <section class="card">
+
+        <h2>📸 Our Beautiful Memories</h2>
+
+        <div class="memories">
+
+            <div class="memory-box">
+                ✨ First Chat
+            </div>
+
+            <div class="memory-box">
+                ☎️ First Call
+            </div>
+
+            <div class="memory-box">
+                ❤️ First Meet
+            </div>
+
+            <div class="memory-box">
+                🌍 Endless Memories
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHY I LOVE YOU -->
+
+    <section class="card">
+
+        <h2>💖 Why I Love You</h2>
+
+        <p>
+            I love your smile,
+            your kindness,
+            your cute anger,
+            your care,
+            your voice,
+            your laugh,
+            and everything about you ❤️
+        </p>
+
+    </section>
+
+    <!-- FUTURE -->
+
+    <section class="card">
+
+        <h2>🌸 Future Dreams</h2>
+
+        <p>
+            I dream of traveling together,
+            laughing together,
+            growing together,
+            and creating thousands of beautiful memories with you ❤️
+        </p>
+
+    </section>
+
+    <!-- FUN SECTION -->
+
+    <section class="card">
+
+        <h2>🎉 Click The Button</h2>
+
+        <button onclick="showLoveMessage()">
+            Click Me ❤️
+        </button>
+
+        <div id="loveMessage"></div>
+
+    </section>
+
+    <!-- FINAL SECTION -->
+
+    <section class="card">
+
+        <h2>❤️ Forever & Always ❤️</h2>
+
+        <p>
+            No matter where life takes us,
+            I will always choose you 💖
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Made With Endless Love ❤️
+
+    </div>
+
+</div>
+
+<!-- MUSIC -->
+
+<audio autoplay loop>
+
+    <source src="music.mp3" type="audio/mp3">
+
+</audio>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+/* ==========================================
+   TYPING EFFECT
+========================================== */
+
+const message = `
+Happy Birthday My Love ❤️
+
+From the day you came into my life,
+everything started feeling more beautiful.
+
+Your smile became my favorite reason to stay happy,
+your voice became my peace,
+and your love became my biggest strength.
+
+You are not just my girlfriend,
+you are my safe place,
+my happiness,
+and my favorite person in this world ❤️
+
+Every moment with you feels magical.
+
+From our silly talks to late night conversations,
+every memory with you is precious to me 💖
+
+I just want to promise one thing —
+
+No matter what happens in life,
+I will always stand beside you,
+support you,
+and love you with all my heart ❤️
+
+Happy Birthday Princess 🎂❤️
+I Love You Forever ❤️
+`;
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < message.length){
+
+        document.getElementById("typing-text")
+        .innerHTML += message.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,35);
+    }
+}
+
+typeWriter();
+
+/* ==========================================
+   FUN LOVE MESSAGES
+========================================== */
+
+const messages = [
+
+    "You are my favorite person ❤️",
+
+    "You make my life beautiful 💖",
+
+    "Forever Yours ❤️",
+
+    "I Love You So Much 🌸",
+
+    "Happy Birthday Princess 🎂"
+];
+
+function showLoveMessage(){
+
+    const random =
+    messages[Math.floor(Math.random() * messages.length)];
+
+    document.getElementById(
+        "loveMessage"
+    ).innerHTML = random;
+}
+
+/* ==========================================
+   SCROLL BUTTON
+========================================== */
+
+function scrollToLetter(){
+
+    window.scrollTo({
+
+        top:window.innerHeight,
+
+        behavior:"smooth"
+    });
+}
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left =
+    Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+    Math.random() * 20 + 15 + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
